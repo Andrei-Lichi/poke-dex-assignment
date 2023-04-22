@@ -3,20 +3,36 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import useFetch from "../hooks/useFetch";
+import "../styles/pokemon.css";
+import { Link } from "react-router-dom";
 
-export default function PokemonCard(pokemon) {
+export default function PokemonCard({ pokemon }) {
+  const { data: pokemonData, isLoading, error } = useFetch(`${pokemon.url}`);
+  const id = pokemon.url.split("/")[6];
+
+  const type =
+    pokemonData && pokemonData.types ? [pokemonData.types[0].type.name] : [];
+  console.log(type);
+
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+  if (isLoading) return <h1>loading..</h1>;
+  if (error) return <h1>error..</h1>;
   return (
-    <Card>
-      {/* <CardMedia
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      /> */}
-
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {pokemon.name}
-        </Typography>
-      </CardContent>
-    </Card>
+    <>
+      {pokemonData && (
+        <Card class={type}>
+          <img src={imageUrl}></img>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              <Link to={`/pokemons/${id}`}>{pokemon.name}</Link>
+            </Typography>
+            <Typography gutterBottom variant="h5" component="div">
+              #{id}
+            </Typography>
+          </CardContent>
+        </Card>
+      )}
+    </>
   );
 }

@@ -9,9 +9,7 @@ const useFetch = (endpoint) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${endpoint}`
-        );
+        const response = await axios.get(`${endpoint}`);
         setData(response.data);
         console.log(response.data);
       } catch (error) {
