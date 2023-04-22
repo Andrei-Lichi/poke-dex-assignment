@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import PokemonList from "./components/PokemonList";
 import PokemonDetails from "./components/PokemonDetails";
 import Header from "./components/Header";
