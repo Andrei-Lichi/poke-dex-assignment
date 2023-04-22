@@ -26,7 +26,7 @@ export default function PokemonCard({ pokemon }) {
           <img src={imageUrl}></img>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              <Link to={`/pokemons/${id}`}>{pokemon.name}</Link>
+              <Link className="pokemon-link" to={`/pokemons/${id}`}>{pokemon.name}</Link>
             </Typography>
             <Typography gutterBottom variant="h5" component="div">
               #{id}

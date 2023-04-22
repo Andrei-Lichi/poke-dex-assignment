@@ -15,7 +15,7 @@ export default function Header() {
         <AppBar position="static" style={{ marginBottom: '50px' }}>
           <Toolbar>
             <IconButton component={Link} to="/" edge="start"  color="inherit" aria-label="home">
-            <img src="/logo192.png" alt="Pokemon logo" style={{ width: '50%', height: 'auto' }} />
+            <img src="/pikachu.png" alt="Pokemon logo" style={{ width: '25%', height: 'auto' }} />
             </IconButton>
             <Typography variant="h3">
                 Pokedex
