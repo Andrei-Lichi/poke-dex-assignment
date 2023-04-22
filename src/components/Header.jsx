@@ -1,25 +1,23 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
+import AppBar from '@mui/material/AppBar';
 
-import Toolbar from '@material-ui/core/Toolbar';
+import Toolbar from '@mui/material/Toolbar';
 
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 
-import IconButton from '@material-ui/core/IconButton';
-
-import HomeIcon from '@material-ui/icons/Home';
+import IconButton from '@mui/material/IconButton';
 
 import { Link } from 'react-router-dom';
 
 export default function Header() {
   
     return (
-        <AppBar position="static">
+        <AppBar position="static" style={{ marginBottom: '50px' }}>
           <Toolbar>
             <IconButton component={Link} to="/" edge="start"  color="inherit" aria-label="home">
-            <img src="/pokemonlogo.png" alt="Pokemon logo" />
+            <img src="/logo192.png" alt="Pokemon logo" style={{ width: '50%', height: 'auto' }} />
             </IconButton>
-            <Typography variant="h6">
+            <Typography variant="h3">
                 Pokedex
             </Typography>
           </Toolbar>

@@ -3,6 +3,7 @@ import PokemonCard from "./PokemonCard";
 import useFetch from "../hooks/useFetch";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function PokemonList() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +21,7 @@ export default function PokemonList() {
     setCurrentPage(currentPage - 1);
   };
 
-  if (isLoading) return <h1>loading..</h1>;
+  if (isLoading) return <h1><CircularProgress></CircularProgress></h1>;
   if (error) return <h1>error</h1>;
 
   return (

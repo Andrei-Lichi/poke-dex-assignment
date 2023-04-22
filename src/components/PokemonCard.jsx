@@ -3,6 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import CircularProgress from '@mui/material/CircularProgress';
 import useFetch from "../hooks/useFetch";
 import "../styles/pokemon.css";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ export default function PokemonCard({ pokemon }) {
   console.log(type);
 
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-  if (isLoading) return <h1>loading..</h1>;
+  if (isLoading) return <h1><CircularProgress></CircularProgress></h1>;
   if (error) return <h1>error..</h1>;
   return (
     <>

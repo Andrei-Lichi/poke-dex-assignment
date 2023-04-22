@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import "../styles/pokemonDetails.css";
+import CircularProgress from '@mui/material/CircularProgress';
 import { Card, CardContent, Typography } from "@mui/material";
 
 export function PokemonDetails() {
@@ -11,7 +12,7 @@ export function PokemonDetails() {
   const type =
     pokemonData && pokemonData.types ? [pokemonData.types[0].type.name] : [];
   console.log(type);
-  if (isLoading) return <h1>loading..</h1>;
+  if (isLoading) return <h1><CircularProgress></CircularProgress></h1>;
   if (error) return <h1>error..</h1>;
 
   return (
