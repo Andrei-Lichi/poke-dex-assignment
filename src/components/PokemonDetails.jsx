@@ -15,60 +15,62 @@ export function PokemonDetails() {
   if (error) return <h1>error..</h1>;
 
   return (
-    <Card class={type} sx={{ maxWidth: 345 }}>
-      <CardContent>
-        <img src={imageUrl} alt={pokemonData.name} />
-        <Typography variant="h5" component="div">
-          {pokemonData.name}
-        </Typography>
-        <Typography variant="subtitle1" component="div">
-          <strong>Abilities:</strong>{" "}
-          {pokemonData.abilities
-            .map((ability) => ability.ability.name)
-            .join(", ")}
-        </Typography>
-        <Typography variant="subtitle1" component="div">
-          <strong>Type:</strong>{" "}
-          {pokemonData.types.map((type) => type.type.name).join(", ")}
-        </Typography>
-        <div className="pokemon-stats">
-          <Typography variant="subtitle1" component="div">
-            <strong>Stats:</strong>
+    <div className="center-container">
+      <Card class={type} sx={{ maxWidth: 345 }}>
+        <CardContent>
+          <img src={imageUrl} alt={pokemonData.name} />
+          <Typography variant="h3" component="div">
+            {pokemonData.name}
           </Typography>
-          <div className="stat-labels">
-            <Typography variant="subtitle2" component="div">
-              HP:
+          <Typography variant="h6" component="div">
+            <strong>Abilities:</strong>{" "}
+            {pokemonData.abilities
+              .map((ability) => ability.ability.name)
+              .join(", ")}
+          </Typography>
+          <Typography variant="h6" component="div">
+            <strong>Type:</strong>{" "}
+            {pokemonData.types.map((type) => type.type.name).join(", ")}
+          </Typography>
+          <div className="pokemon-stats">
+            <Typography variant="h6" component="div">
+              <strong>Stats:</strong>
             </Typography>
-            <Typography variant="subtitle2" component="div">
-              Attack:
-            </Typography>
-            <Typography variant="subtitle2" component="div">
-              Defense:
-            </Typography>
-            <Typography variant="subtitle2" component="div">
-              Special Attack:
-            </Typography>
-            <Typography variant="subtitle2" component="div">
-              Special Defense:
-            </Typography>
-            <Typography variant="subtitle2" component="div">
-              Speed:
-            </Typography>
-          </div>
-          <div className="stat-values">
-            {pokemonData.stats.map((stat) => (
-              <Typography
-                key={stat.stat.name}
-                variant="subtitle2"
-                component="div"
-              >
-                {stat.base_stat}
+            <div className="stat-labels">
+              <Typography variant="h6" component="div">
+                HP:
               </Typography>
-            ))}
+              <Typography variant="h6" component="div">
+                Attack:
+              </Typography>
+              <Typography variant="h6" component="div">
+                Defense:
+              </Typography>
+              <Typography variant="h6" component="div">
+                Special Attack:
+              </Typography>
+              <Typography variant="h6" component="div">
+                Special Defense:
+              </Typography>
+              <Typography variant="h6" component="div">
+                Speed:
+              </Typography>
+            </div>
+            <div className="stat-values">
+              {pokemonData.stats.map((stat) => (
+                <Typography
+                  key={stat.stat.name}
+                  variant="h6"
+                  component="div"
+                >
+                  {stat.base_stat}
+                </Typography>
+              ))}
+            </div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
 

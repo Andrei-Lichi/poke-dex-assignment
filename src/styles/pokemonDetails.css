@@ -29,3 +29,11 @@
 .stat-value {
   margin-bottom: 0.5rem;
 }
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
