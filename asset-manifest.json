@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/poke-dex-assignment/static/css/main.fe892b8b.css",
-    "main.js": "/poke-dex-assignment/static/js/main.bfee440b.js",
+    "main.js": "/poke-dex-assignment/static/js/main.3c4529ce.js",
     "index.html": "/poke-dex-assignment/index.html",
     "main.fe892b8b.css.map": "/poke-dex-assignment/static/css/main.fe892b8b.css.map",
-    "main.bfee440b.js.map": "/poke-dex-assignment/static/js/main.bfee440b.js.map"
+    "main.3c4529ce.js.map": "/poke-dex-assignment/static/js/main.3c4529ce.js.map"
   },
   "entrypoints": [
     "static/css/main.fe892b8b.css",
-    "static/js/main.bfee440b.js"
+    "static/js/main.3c4529ce.js"
   ]
 }
